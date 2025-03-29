@@ -8,43 +8,39 @@
     <link rel="icon" href="images/favicon.png" type="image/png" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Styles personnalisés -->
     <style>
-      /* Logo principal */
+      /* Logo */
       #logo-cosmo {
         max-width: 300px;
         margin-bottom: 2rem;
       }
-      /* Liste de produits verticale */
-      .product-list ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        /* Hauteur max. et défilement vertical si nécessaire */
-        max-height: 70vh;
-        overflow-y: auto;
+
+      /* ----- GALERIE PRODUITS (tuiles 3 par rangée) ----- */
+      .product-gallery {
+        /* Pour créer un tableau responsive à plusieurs colonnes */
+        display: grid;
+        /* Ajustez minmax(180px) selon la taille souhaitée */
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+        /* Les tuiles s’empilent en vertical si l’écran est étroit */
+        justify-items: center;
       }
-      .product-list li {
-        margin: 1rem 0;
-      }
-      .product-list a {
-        color: #fff;
-        text-decoration: none;
-      }
-      .product-list a:hover {
-        text-decoration: underline;
-      }
-      /* Vignettes en petit format */
-      .product-list img {
-        max-width: 100px; /* ajustez à volonté */
+      .product-gallery img {
+        width: 180px;         /* force la même largeur pour chaque vignette */
         height: auto;
-        vertical-align: middle;
         border-radius: 8px;
+        cursor: pointer;      /* main au survol */
+        /* Optionnel: si vous voulez un léger effet au survol */
+        transition: transform 0.2s;
       }
-      /* Zone d'affichage de l'image grand format */
+      .product-gallery img:hover {
+        transform: scale(1.03);
+      }
+
+      /* ----- AFFICHAGE GRAND FORMAT ----- */
       .product-image {
-        display: none;      /* cachée par défaut */
-        text-align: center; /* centrer l’image */
+        display: none;        /* caché par défaut */
+        text-align: center;
       }
       .product-image img {
         max-width: 90%;
@@ -55,7 +51,7 @@
         margin-top: 1rem;
       }
 
-      /* Section valeurs nutritives (inchangée, liste + image) */
+      /* ----- VALEURS NUTRITIVES ----- */
       .tvn-list ul {
         list-style: none;
         padding: 0;
@@ -71,6 +67,7 @@
       }
       .tvn-image {
         text-align: center;
+        display: none; /* caché par défaut */
       }
       .tvn-image img {
         max-width: 90%;
@@ -105,7 +102,7 @@
   <body class="is-preload">
     <div id="bg"></div>
     <div id="wrapper">
-      <!-- En-tête -->
+      <!-- EN-TÊTE -->
       <header id="header">
         <img id="logo-cosmo" src="images/Logo-Invasion-Sucree-FR-2024-08.png" alt="Logo Invasion Sucrée" />
         <h1>Invasion Sucrée</h1>
@@ -121,7 +118,7 @@
         </nav>
       </header>
 
-      <!-- Contenu principal -->
+      <!-- CONTENU PRINCIPAL -->
       <div id="main">
         <!-- PRODUITS -->
         <article id="produits">
@@ -135,71 +132,69 @@
             <a href="#valeurs" class="button">Voir les valeurs nutritives</a>
           </p>
 
-          <!-- Liste verticale + clic pour agrandir -->
-          <div class="product-list">
-            <p>Cliquez sur un produit pour l’agrandir :</p>
-            <ul>
-              <li>
-                <a href="#" class="product-link" data-file="Anneaux Glow-01.jpg">
-                  <img src="images/Anneaux Glow-01.jpg" alt="Anneaux Glow" />
-                  &nbsp;Anneaux Glow
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Baleine Glow v2-01.jpg">
-                  <img src="images/Baleine Glow v2-01.jpg" alt="Baleine Glow" />
-                  &nbsp;Baleines Whales
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Crèmes Glacées v2 Glow-01.jpg">
-                  <img src="images/Crèmes Glacées v2 Glow-01.jpg" alt="Crèmes Glacées" />
-                  &nbsp;Crèmes Glacées
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Baies Glow-01.jpg">
-                  <img src="images/Baies Glow-01.jpg" alt="Baies Glow" />
-                  &nbsp;Baies Berries
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Caramels GlowV2-01.jpg">
-                  <img src="images/Caramels GlowV2-01.jpg" alt="Caramels Glow" />
-                  &nbsp;Caramels
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Éponges Glow-01.jpg">
-                  <img src="images/Éponges Glow-01.jpg" alt="Éponges Glow" />
-                  &nbsp;Éponges Sponges
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Grenouilles Glow-01.jpg">
-                  <img src="images/Grenouilles Glow-01.jpg" alt="Grenouilles Glow" />
-                  &nbsp;Grenouilles Frogs
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Requins Glow-01.jpg">
-                  <img src="images/Requins Glow-01.jpg" alt="Requins Glow" />
-                  &nbsp;Requins Sharks
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Soleils v2 Glow-01-01.jpg">
-                  <img src="images/Soleils v2 Glow-01-01.jpg" alt="Soleils Glow" />
-                  &nbsp;Soleils Suns
-                </a>
-              </li>
-              <li>
-                <a href="#" class="product-link" data-file="Vers Glow-01.jpg">
-                  <img src="images/Vers Glow-01.jpg" alt="Vers Glow" />
-                  &nbsp;Vers Worms
-                </a>
-              </li>
-            </ul>
+          <!-- GALERIE (3 par rangée, vertical) -->
+          <div class="product-gallery">
+            <!-- Ajustez la liste ci-dessous selon vos produits -->
+            <img
+              src="images/Anneaux Glow-01.jpg"
+              alt="Anneaux Glow"
+              data-file="Anneaux Glow-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Baleine Glow v2-01.jpg"
+              alt="Baleine Glow"
+              data-file="Baleine Glow v2-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Crèmes Glacées v2 Glow-01.jpg"
+              alt="Crèmes Glacées"
+              data-file="Crèmes Glacées v2 Glow-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Baies Glow-01.jpg"
+              alt="Baies Glow"
+              data-file="Baies Glow-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Caramels GlowV2-01.jpg"
+              alt="Caramels Glow"
+              data-file="Caramels GlowV2-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Éponges Glow-01.jpg"
+              alt="Éponges Glow"
+              data-file="Éponges Glow-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Grenouilles Glow-01.jpg"
+              alt="Grenouilles Glow"
+              data-file="Grenouilles Glow-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Requins Glow-01.jpg"
+              alt="Requins Glow"
+              data-file="Requins Glow-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Soleils v2 Glow-01-01.jpg"
+              alt="Soleils Glow"
+              data-file="Soleils v2 Glow-01-01.jpg"
+              class="product-thumb"
+            />
+            <img
+              src="images/Vers Glow-01.jpg"
+              alt="Vers Glow"
+              data-file="Vers Glow-01.jpg"
+              class="product-thumb"
+            />
           </div>
 
           <!-- Affichage grand format -->
@@ -213,6 +208,7 @@
         <!-- VALEURS NUTRITIVES -->
         <article id="valeurs">
           <h2 class="major">Valeurs nutritives</h2>
+
           <!-- Liste cliquable (.tvn-list) -->
           <div class="tvn-list">
             <p>Cliquez sur un produit pour voir sa fiche.</p>
@@ -253,7 +249,7 @@
           </div>
 
           <!-- Zone d'affichage de l'image sélectionnée (.tvn-image) -->
-          <div class="tvn-image" style="display:none;">
+          <div class="tvn-image">
             <img id="tvn-image" src="" alt="Valeur nutritive" />
             <br />
             <a href="#" id="tvn-back" class="button">Retour à la liste</a>
@@ -314,7 +310,7 @@
         </article>
       </div>
 
-      <!-- Pied de page -->
+      <!-- PIED DE PAGE -->
       <footer id="footer">
         <p class="copyright">
           &copy; Invasion Sucrée. Design basé sur
@@ -330,35 +326,35 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script : affichage grand format des produits -->
+    <!-- Script : zoom sur produits (vignettes -> grand format) -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        const productLinks = document.querySelectorAll(".product-link");
-        const productList = document.querySelector(".product-list");
+        const thumbs = document.querySelectorAll(".product-thumb");
+        const gallery = document.querySelector(".product-gallery");
         const productImage = document.querySelector(".product-image");
         const productDisplay = document.getElementById("product-display");
         const productBack = document.getElementById("product-back");
 
-        productLinks.forEach(link => {
-          link.addEventListener("click", function(e) {
+        thumbs.forEach(img => {
+          img.addEventListener("click", e => {
             e.preventDefault();
-            const file = link.getAttribute("data-file");
-            productDisplay.src = "images/" + file;
-            productList.style.display = "none";
+            const file = img.getAttribute("data-file");
+            productDisplay.src = "images/" + file;   // dossier "images/"
+            gallery.style.display = "none";
             productImage.style.display = "block";
           });
         });
 
-        productBack.addEventListener("click", function(e) {
+        productBack.addEventListener("click", e => {
           e.preventDefault();
           productDisplay.src = "";
           productImage.style.display = "none";
-          productList.style.display = "block";
+          gallery.style.display = "grid";
         });
       });
     </script>
 
-    <!-- Script : affichage des valeurs nutritives (existant) -->
+    <!-- Script : valeurs nutritives (inchangé) -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const links = document.querySelectorAll(".tvn-link");
