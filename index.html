@@ -27,35 +27,28 @@
     <meta property="twitter:url" content="https://invasionsucree.ca/" />
     <meta name="twitter:title" content="Invasion Sucrée – Prêt à combattre avec la résistance?" />
     <meta name="twitter:description" content="Des bonbons lyophilisés croquants, locaux et savoureux. Rejoignez la résistance sucrée !" />
-    <meta name="twitter:image" content="https://invasionsucree.ca/images/preview.jpg" /> 
+    <meta name="twitter:image" content="https://invasionsucree.ca/images/preview.jpg" />
   </head>
   <body class="is-preload">
-    <!-- Élément de fond requis par le CSS -->
     <div id="bg"></div>
 
-    <!-- Wrapper -->
     <div id="wrapper">
-
-      <!-- Header -->
       <header id="header">
-        <img id="logo-cosmo" src="images/Logo-Invasion-Sucree-FR-2024-08.png" alt="Logo Cosmo Lyo" />
+        <img id="logo-cosmo" src="images/Logo-Invasion-Sucree-FR-2024-08.png" alt="Logo Invasion Sucrée" />
         <h1>Invasion Sucrée</h1>
         <h2>Imminente</h2>
         <p>Prêt à combattre avec nous?</p>
         <nav>
           <ul>
             <li><a href="#produits">Produits</a></li>
-            <li><a href="#carte">Carte</a></li> 
+            <li><a href="#carte">Carte</a></li>
             <li><a href="#apropos">À propos</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </header>
 
-      <!-- Main -->
       <div id="main">
-
-        <!-- Produits -->
         <article id="produits">
           <h2 class="major">Produits</h2>
           <p>
@@ -78,77 +71,110 @@
           </div>
         </article>
 
-        <!-- Valeurs nutritives -->
+        <!-- Valeurs Nutritives -->
         <article id="valeurs">
           <h2 class="major">Valeurs nutritives</h2>
           <p>Cliquez sur un produit pour voir sa fiche.</p>
           <ul class="tvn-list">
-            <!-- Exemple de lien --><li><a href="#" onclick="openLightbox('images/tvn/Whales Gummy Vidal TVN.png')">Whales Gummy Vidal</a></li>
-            <li><a href="#" onclick="openLightbox('images/tvn/Air Heads TVN.png')">Air Heads</a></li>
-            <!-- Ajoutez les autres liens ici -->
+            <li><a href="#" onclick="showTVN('Whales Gummy Vidal TVN.png')">Whales Gummy Vidal</a></li>
+            <li><a href="#" onclick="showTVN('Air Heads TVN.png')">Air Heads</a></li>
+            <li><a href="#" onclick="showTVN('Assorted Dinosaur TVN.png')">Assorted Dinosaur</a></li>
+            <li><a href="#" onclick="showTVN('Awesome Blossoms TVN.png')">Awesome Blossoms</a></li>
+            <li><a href="#" onclick="showTVN('Caramel Werthers TVN.png')">Caramel Werthers</a></li>
+            <li><a href="#" onclick="showTVN('Cherry Loops Huer TVN.png')">Cherry Loops Huer</a></li>
+            <li><a href="#" onclick="showTVN('Cola Bottles Kervan TVN.png')">Cola Bottles Kervan</a></li>
+            <li><a href="#" onclick="showTVN('Cola Bottles Sour Koala TVN.png')">Cola Bottles Sour Koala</a></li>
+            <li><a href="#" onclick="showTVN('Cola Bottles Sugar-free TVN.png')">Cola Bottles Sugar-free</a></li>
+            <li><a href="#" onclick="showTVN('Foam Bottom Strawberry TVN.png')">Foam Bottom Strawberry</a></li>
+            <li><a href="#" onclick="showTVN('Fried Eggs Koala TVN.png')">Fried Eggs Koala</a></li>
+            <li><a href="#" onclick="showTVN('Frogs Gummy Zone TVN.png')">Frogs Gummy Zone</a></li>
+            <li><a href="#" onclick="showTVN('Gummi Bears 12 Flavor Albanese TVN.png')">Gummi Bears Albanese</a></li>
+            <li><a href="#" onclick="showTVN('Ice Cream Kervan TVN.png')">Ice Cream Kervan</a></li>
+            <li><a href="#" onclick="showTVN('Jolly Rancher TVN.png')">Jolly Rancher</a></li>
+            <li><a href="#" onclick="showTVN('Juice Berries Koala TVN.png')">Juice Berries Koala</a></li>
+            <li><a href="#" onclick="showTVN('Juicy Blues Koala TVN.png')">Juicy Blues Koala</a></li>
+            <li><a href="#" onclick="showTVN('Mango Pineapple Rings CCC TVN.png')">Mango Pineapple Rings CCC</a></li>
+            <li><a href="#" onclick="showTVN('Peach Rings Gummi Albanese TVN.png')">Peach Rings Albanese</a></li>
+            <li><a href="#" onclick="showTVN('Peach Rings Kervan TVN.png')">Peach Rings Kervan</a></li>
+            <li><a href="#" onclick="showTVN('Real Fruits Medley TVN.png')">Real Fruits Medley</a></li>
+            <li><a href="#" onclick="showTVN('Salade de fruits Frisia TVN.png')">Salade de fruits Frisia</a></li>
+            <li><a href="#" onclick="showTVN('Sharks assorted colors Kervan TVN.png')">Sharks assorted Kervan</a></li>
+            <li><a href="#" onclick="showTVN('Sharks Blue Kervan TVN.png')">Sharks Blue Kervan</a></li>
+            <li><a href="#" onclick="showTVN('Sour Brite Octopus TNV.png')">Sour Brite Octopus</a></li>
+            <li><a href="#" onclick="showTVN('Sour Cherry Balls TVN.png')">Sour Cherry Balls</a></li>
+            <li><a href="#" onclick="showTVN('Sour Jacks TVN.png')">Sour Jacks</a></li>
+            <li><a href="#" onclick="showTVN('Sour Juicy Berries Koala TVN.png')">Sour Juicy Berries</a></li>
+            <li><a href="#" onclick="showTVN('Sour Worms Kervan TVN.png')">Sour Worms Kervan</a></li>
+            <li><a href="#" onclick="showTVN('Taffy Green Apple Taffy Town TVN.png')">Taffy Green Apple</a></li>
+            <li><a href="#" onclick="showTVN('Taffy Mix Taffy Town TVN.png')">Taffy Mix</a></li>
+            <li><a href="#" onclick="showTVN('Taffy Neapolitan Taffy Town TVN.png')">Taffy Neapolitan</a></li>
           </ul>
-          <div id="lightbox" class="lightbox" onclick="closeLightbox()">\            <span class="close">Retour</span>
-            <img id="lightbox-img" src="" alt="Valeur nutritive" />
+          <div id="tvn-image-container" style="margin-top:2em;text-align:center;display:none">
+            <img id="tvn-image" src="" alt="Valeur nutritive" style="max-width:100%;height:auto" />
+            <p><a href="#valeurs" class="button">Retour à la liste</a></p>
           </div>
         </article>
 
-        <!-- Carte -->
         <article id="carte">
           <h2 class="major">Carte</h2>
           <div class="map-container">
             <iframe
               src="https://www.google.com/maps/d/u/3/embed?mid=1icBeRdZJMg8xCi7mETubbSnTMZ3raS4&ehbc=2E312F"
-              allowfullscreen
-              loading="lazy">
-            </iframe>
+              allowfullscreen loading="lazy"></iframe>
           </div>
         </article>
 
-        <!-- À propos -->
         <article id="apropos">
           <h2 class="major">À propos</h2>
-          <p>L’Invasion Sucrée, c’est une petite révolution dans le monde des friandises. On prend les bonbons classiques que tout le monde adore — vers, grenouilles, anneaux, caramels — et on les propulse dans une autre dimension grâce à la lyophilisation.</p>
-          <p>Résultat ? Des bonbons croquants, légers comme l’air, et intensément savoureux. Pas d’ajouts artificiels ni de transformations inutiles : seulement des textures inattendues et une explosion de goût à chaque bouchée.</p>
-          <p>Fabriqués au Québec et emballés avec soin, nos bonbons lyophilisés sont une invitation à explorer l’univers sucré sous un nouvel angle. Que vous soyez curieux, nostalgique ou tout simplement gourmand, rejoignez la résistance et savourez l’invasion.</p>
+          <p>
+            L’Invasion Sucrée, c’est une petite révolution dans le monde des friandises. On prend les bonbons classiques que tout le monde adore — vers, grenouilles, anneaux, caramels — et on les propulse dans une autre dimension grâce à la lyophilisation.
+          </p>
+          <p>
+            Résultat ? Des bonbons croquants, légers comme l’air, et intensément savoureux. Pas d’ajouts artificiels ni de transformations inutiles : seulement des textures inattendues et une explosion de goût à chaque bouchée.
+          </p>
+          <p>
+            Fabriqués au Québec et emballés avec soin, nos bonbons lyophilisés sont une invitation à explorer l’univers sucré sous un nouvel angle. Que vous soyez curieux, nostalgique ou tout simplement gourmand, rejoignez la résistance et savourez l’invasion.
+          </p>
         </article>
 
-        <!-- Contact -->
         <article id="contact">
           <h2 class="major">Contact</h2>
-          <p>Tu veux rejoindre la résistance sucrée ? Que ce soit pour vendre nos produits dans ton commerce, passer une commande en gros ou simplement en savoir plus, notre équipe est là pour t'aider. Consulte la section <strong>Carte</strong> pour repérer nos points de vente ou contacte-nous directement.</p>
-          <p>📦 <strong>Commandes en gros</strong> : <a href="https://sweetinvaders.square.site/" target="_blank">sweetinvaders.square.site</a><br />✉️ <strong>Contact direct</strong> : <a href="mailto:gabriel@sweetinvader.ca">gabriel@sweetinvader.ca</a></p>
-          <p><strong>Gabriel Vallée</strong><br />Créateur en chef & Directeur des ventes<br />Sweet Invaders / L’invasion Sucrée<br />Saguenay, Canada<br />📱 418-579-0912 poste 5</p>
+          <p>
+            Tu veux rejoindre la résistance sucrée ? Que ce soit pour vendre nos produits dans ton commerce, passer une commande en gros ou simplement en savoir plus, notre équipe est là pour t'aider.
+            Consulte la section <strong>Carte</strong> pour repérer nos points de vente ou contacte-nous directement.
+          </p>
+          <p>
+            📦 <strong>Commandes en gros</strong> : <a href="https://sweetinvaders.square.site/" target="_blank">sweetinvaders.square.site</a><br />
+            ✉️ <strong>Contact direct</strong> : <a href="mailto:gabriel@sweetinvader.ca">gabriel@sweetinvader.ca</a>
+          </p>
+          <p>
+            <strong>Gabriel Vallée</strong><br />
+            Créateur en chef & Directeur des ventes<br />
+            Sweet Invaders / L’invasion Sucrée<br />
+            Saguenay, Canada<br />
+            📱 418-579-0912 poste 5
+          </p>
         </article>
-
       </div>
 
-      <!-- Footer -->
       <footer id="footer">
         <p class="copyright">&copy; Invasion Sucrée. Design basé sur <a href="https://html5up.net">HTML5 UP</a>.</p>
       </footer>
-
     </div>
 
-    <!-- Scripts -->
+    <script>
+      function showTVN(filename) {
+        const container = document.getElementById('tvn-image-container');
+        const image = document.getElementById('tvn-image');
+        image.src = `images/tvn/${filename}`;
+        container.style.display = 'block';
+      }
+    </script>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-      function openLightbox(imgSrc) {
-        const lightbox = document.getElementById("lightbox");
-        const img = document.getElementById("lightbox-img");
-        img.src = imgSrc;
-        lightbox.style.display = "flex";
-      }
-
-      function closeLightbox() {
-        const lightbox = document.getElementById("lightbox");
-        const img = document.getElementById("lightbox-img");
-        img.src = "";
-        lightbox.style.display = "none";
-      }
-    </script>
   </body>
 </html>
