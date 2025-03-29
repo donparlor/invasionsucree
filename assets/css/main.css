@@ -1741,3 +1741,49 @@ article#carte h2.major {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   object-fit: contain;
 }
+
+.tvn-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tvn-list li {
+  margin-bottom: 0.5rem;
+}
+
+.tvn-list a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80vh;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 20px #000;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
