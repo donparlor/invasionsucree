@@ -1685,22 +1685,17 @@ article#carte h2.major {
   margin: 0 !important; 
 }
 
-/* 
-   Conteneur de la carte :
-   - flex: 1 => occupe tout l'espace disponible sous le titre
-   - position: relative => pour placer l'iframe en absolute
-*/
+/* === Carte Google Maps === */
 .map-container {
-  flex: 1; 
+  flex: 1;
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: 1rem;  /* Un petit espace sous le titre */
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* 
-   L’iframe occupe 100% du conteneur .map-container
-*/
 .map-container iframe {
   position: absolute;
   top: 0; 
@@ -1710,22 +1705,39 @@ article#carte h2.major {
   border: 0;
 }
 
-/* 
-   Sur mobile (<= 736px) :
-   - On agrandit encore la zone : 95% largeur, 85% hauteur
-   - Réduit la marge pour plus d'espace vertical
-*/
+/* Ajustements pour mobile (<= 736px) */
 @media screen and (max-width: 736px) {
   article#carte {
-    width: 95vw !important;   
-    height: 85vh !important;  
+    width: 95vw !important;
+    height: 85vh !important;
     margin: 1rem auto !important;
   }
 }
 
+/* === Navigation du bas === */
 #header nav ul li a {
-  font-weight: 700 !important;  /* ou la graisse souhaitée */
-  font-size: 1.1rem !important;   /* ajuste la taille selon tes préférences */
-  color: #fff !important;         /* couleur du texte */
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  color: #fff !important;
   text-transform: uppercase !important;
+}
+
+/* === Galerie de produits === */
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+  max-height: 75vh;
+  padding: 1rem 0;
+}
+
+.product-gallery img {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
 }
