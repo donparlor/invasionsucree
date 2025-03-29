@@ -12,15 +12,52 @@
         max-width: 300px;
         margin-bottom: 2rem;
       }
+      .nutrition-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .nutrition-list li a {
+        color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        flex-direction: column;
+        padding: 2rem;
+      }
+      .lightbox img {
+        max-width: 90vw;
+        max-height: 80vh;
+        border-radius: 8px;
+      }
+      .lightbox button {
+        margin-top: 1.5rem;
+        padding: 0.5rem 1rem;
+        background: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
     </style>
-
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://invasionsucree.ca/" />
     <meta property="og:title" content="Invasion Sucrée – Prêt à combattre avec la résistance?" />
     <meta property="og:description" content="Des bonbons lyophilisés croquants, locaux et savoureux. Rejoignez la résistance sucrée !" />
     <meta property="og:image" content="https://invasionsucree.ca/images/preview.jpg" />
-
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="invasionsucree.ca" />
@@ -46,16 +83,11 @@
           </ul>
         </nav>
       </header>
-
       <div id="main">
         <article id="produits">
           <h2 class="major">Produits</h2>
-          <p>
-            Nos bonbons lyophilisés sont de véritables éclats de bonheur croustillants. On prend les classiques que vous adorez — anneaux, vers, grenouilles, caramels, requins — et on les propulse dans une autre galaxie grâce à la lyophilisation. Résultat: des bonbons ultra légers, incroyablement croquants, et tout simplement délicieux. Préparez-vous à une invasion sucrée… irrésistible !
-          </p>
-          <p>
-            <a href="#valeurs" class="button">Voir les valeurs nutritives</a>
-          </p>
+          <p>Nos bonbons lyophilisés sont de véritables éclats de bonheur croustillants. On prend les classiques que vous adorez et on les propulse dans une autre galaxie grâce à la lyophilisation.</p>
+          <p><a href="#valeurs" class="button">Voir les valeurs nutritives</a></p>
           <div class="product-gallery">
             <img src="images/Anneaux Glow-01.jpg" alt="Anneaux Glow" />
             <img src="images/Baies Glow-01.jpg" alt="Baies Glow" />
@@ -69,94 +101,92 @@
             <img src="images/Vers Glow-01.jpg" alt="Vers Glow" />
           </div>
         </article>
-
         <article id="valeurs">
           <h2 class="major">Valeurs nutritives</h2>
-          <p>Cliquez sur un produit pour voir sa fiche.</p>
           <ul class="nutrition-list">
-            <li><a href="#" data-file="Whales Gummy Vidal TVN.png">Whales Gummy Vidal</a></li>
-            <li><a href="#" data-file="Air Heads TVN.png">Air Heads</a></li>
-            <!-- Ajoutez ici toutes les autres entrées... -->
+            <li><a data-img="Whales Gummy Vidal TVN.png">Whales Gummy Vidal</a></li>
+            <li><a data-img="Air Heads TVN.png">Air Heads</a></li>
+            <li><a data-img="Assorted Dinosaur TVN.png">Assorted Dinosaur</a></li>
+            <li><a data-img="Awesome Blossoms TVN.png">Awesome Blossoms</a></li>
+            <li><a data-img="Caramel Werthers TVN.png">Caramel Werthers</a></li>
+            <li><a data-img="Cherry Loops Huer TVN.png">Cherry Loops Huer</a></li>
+            <li><a data-img="Cola Bottles Kervan TVN.png">Cola Bottles Kervan</a></li>
+            <li><a data-img="Cola Bottles Sour Koala TVN.png">Cola Bottles Sour Koala</a></li>
+            <li><a data-img="Cola Bottles Sugar-free TVN.png">Cola Bottles Sugar-free</a></li>
+            <li><a data-img="Foam Bottom Strawberry TVN.png">Foam Bottom Strawberry</a></li>
+            <li><a data-img="Fried Eggs Koala TVN.png">Fried Eggs Koala</a></li>
+            <li><a data-img="Frogs Gummy Zone TVN.png">Frogs Gummy Zone</a></li>
+            <li><a data-img="Gummi Bears 12 Flavor Albanese TVN.png">Gummi Bears 12 Flavor Albanese</a></li>
+            <li><a data-img="Ice Cream Kervan TVN.png">Ice Cream Kervan</a></li>
+            <li><a data-img="Jolly Rancher TVN.png">Jolly Rancher</a></li>
+            <li><a data-img="Juice Berries Koala TVN.png">Juice Berries Koala</a></li>
+            <li><a data-img="Juicy Blues Koala TVN.png">Juicy Blues Koala</a></li>
+            <li><a data-img="Mango Pineapple Rings CCC TVN.png">Mango Pineapple Rings CCC</a></li>
+            <li><a data-img="Peach Rings Gummi Albanese TVN.png">Peach Rings Gummi Albanese</a></li>
+            <li><a data-img="Peach Rings Kervan TVN.png">Peach Rings Kervan</a></li>
+            <li><a data-img="Real Fruits Medley TVN.png">Real Fruits Medley</a></li>
+            <li><a data-img="Salade de fruits Frisia TVN.png">Salade de fruits Frisia</a></li>
+            <li><a data-img="Sharks assorted colors Kervan TVN.png">Sharks assorted colors Kervan</a></li>
+            <li><a data-img="Sharks Blue Kervan TVN.png">Sharks Blue Kervan</a></li>
+            <li><a data-img="Sour Brite Octopus TNV.png">Sour Brite Octopus</a></li>
+            <li><a data-img="Sour Cherry Balls TVN.png">Sour Cherry Balls</a></li>
+            <li><a data-img="Sour Jacks TVN.png">Sour Jacks</a></li>
+            <li><a data-img="Sour Juicy Berries Koala TVN.png">Sour Juicy Berries Koala</a></li>
+            <li><a data-img="Sour Worms Kervan TVN.png">Sour Worms Kervan</a></li>
+            <li><a data-img="Taffy Green Apple Taffy Town TVN.png">Taffy Green Apple Taffy Town</a></li>
+            <li><a data-img="Taffy Mix Taffy Town TVN.png">Taffy Mix Taffy Town</a></li>
+            <li><a data-img="Taffy Neapolitan Taffy Town TVN.png">Taffy Neapolitan Taffy Town</a></li>
           </ul>
-          <div id="nutrition-viewer" class="lightbox">
-            <button id="nutrition-return" class="button small">&larr; Retour à la liste</button>
-            <img src="" alt="Valeur nutritive" />
-          </div>
         </article>
-
         <article id="carte">
           <h2 class="major">Carte</h2>
           <div class="map-container">
             <iframe src="https://www.google.com/maps/d/u/3/embed?mid=1icBeRdZJMg8xCi7mETubbSnTMZ3raS4&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
           </div>
         </article>
-
         <article id="apropos">
           <h2 class="major">À propos</h2>
-          <p>
-            L’Invasion Sucrée, c’est une petite révolution dans le monde des friandises.
-            On prend les bonbons classiques que tout le monde adore — vers, grenouilles, anneaux, caramels —
-            et on les propulse dans une autre dimension grâce à la lyophilisation.
-          </p>
-          <p>
-            Résultat ? Des bonbons croquants, légers comme l’air, et intensément savoureux.
-            Pas d’ajouts artificiels ni de transformations inutiles : seulement des textures inattendues
-            et une explosion de goût à chaque bouchée.
-          </p>
-          <p>
-            Fabriqués au Québec et emballés avec soin, nos bonbons lyophilisés sont une invitation à
-            explorer l’univers sucré sous un nouvel angle. Que vous soyez curieux, nostalgique ou tout simplement gourmand,
-            rejoignez la résistance et savourez l’invasion.
-          </p>
+          <p>L’Invasion Sucrée, c’est une petite révolution dans le monde des friandises. On prend les bonbons classiques que tout le monde adore — vers, grenouilles, anneaux, caramels — et on les propulse dans une autre dimension grâce à la lyophilisation.</p>
+          <p>Résultat ? Des bonbons croquants, légers comme l’air, et intensément savoureux. Pas d’ajouts artificiels ni de transformations inutiles : seulement des textures inattendues et une explosion de goût à chaque bouchée.</p>
+          <p>Fabriqués au Québec et emballés avec soin, nos bonbons lyophilisés sont une invitation à explorer l’univers sucré sous un nouvel angle.</p>
         </article>
-
         <article id="contact">
           <h2 class="major">Contact</h2>
-          <p>
-            Tu veux rejoindre la résistance sucrée ? Que ce soit pour vendre nos produits dans ton commerce,
-            passer une commande en gros ou simplement en savoir plus, notre équipe est là pour t'aider.
-            Consulte la section <strong>Carte</strong> pour repérer nos points de vente ou contacte-nous directement.
-          </p>
-          <p>
-            📦 <strong>Commandes en gros</strong> : <a href="https://sweetinvaders.square.site/" target="_blank">sweetinvaders.square.site</a><br />
-            ✉️ <strong>Contact direct</strong> : <a href="mailto:gabriel@sweetinvader.ca">gabriel@sweetinvader.ca</a>
-          </p>
-          <p>
-            <strong>Gabriel Vallée</strong><br />
-            Créateur en chef & Directeur des ventes<br />
-            Sweet Invaders / L’invasion Sucrée<br />
-            Saguenay, Canada<br />
-            📱 418-579-0912 poste 5
-          </p>
+          <p>Tu veux rejoindre la résistance sucrée ? Pour vendre nos produits dans ton commerce, passer une commande en gros ou en savoir plus… contacte-nous!</p>
+          <p>📦 <strong>Commandes en gros</strong> : <a href="https://sweetinvaders.square.site/" target="_blank">sweetinvaders.square.site</a><br />
+          ✉️ <strong>Courriel</strong> : <a href="mailto:gabriel@sweetinvader.ca">gabriel@sweetinvader.ca</a></p>
+          <p><strong>Gabriel Vallée</strong><br />Créateur en chef & Directeur des ventes<br />Sweet Invaders / L’invasion Sucrée<br />Saguenay, Canada<br />📱 418-579-0912 poste 5</p>
         </article>
       </div>
-
       <footer id="footer">
         <p class="copyright">&copy; Invasion Sucrée. Design basé sur <a href="https://html5up.net">HTML5 UP</a>.</p>
       </footer>
     </div>
 
-    <!-- Scripts -->
+    <div class="lightbox" id="lightbox">
+      <img src="" id="lightbox-img" alt="" />
+      <button onclick="closeLightbox()">Retour à la liste</button>
+    </div>
+
+    <script>
+      document.querySelectorAll(".nutrition-list a").forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const imgName = link.getAttribute("data-img");
+          document.getElementById("lightbox-img").src = `images/tvn/${imgName}`;
+          document.getElementById("lightbox").style.display = "flex";
+        });
+      });
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+        document.getElementById("lightbox-img").src = "";
+      }
+    </script>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-      document.querySelectorAll('.nutrition-list a').forEach(link => {
-        link.addEventListener('click', function(event) {
-          event.preventDefault();
-          const file = this.getAttribute('data-file');
-          const viewer = document.getElementById('nutrition-viewer');
-          const img = viewer.querySelector('img');
-          img.src = `images/tvn/${file}`;
-          img.alt = this.textContent;
-          viewer.classList.add('visible');
-        });
-      });
-      document.getElementById('nutrition-return').addEventListener('click', function() {
-        document.getElementById('nutrition-viewer').classList.remove('visible');
-      });
-    </script>
   </body>
 </html>
