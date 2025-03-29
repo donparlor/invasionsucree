@@ -188,5 +188,31 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".tvn-link");
+        const listSection = document.querySelector(".tvn-list");
+        const imageSection = document.querySelector(".tvn-image");
+        const previewImage = document.getElementById("tvn-image");
+        const backButton = document.getElementById("tvn-back");
+    
+        links.forEach(link => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const file = this.getAttribute("data-file");
+            previewImage.src = "images/tvn/" + file;
+            listSection.style.display = "none";
+            imageSection.style.display = "block";
+          });
+        });
+    
+        backButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          previewImage.src = "";
+          imageSection.style.display = "none";
+          listSection.style.display = "block";
+        });
+      });
+    </script>
   </body>
 </html>
