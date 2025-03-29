@@ -7,16 +7,59 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="images/favicon.png" type="image/png" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Styles personnalisés -->
     <style>
       /* Logo principal */
       #logo-cosmo {
         max-width: 300px;
         margin-bottom: 2rem;
       }
-      /* Optionnel : ajustez l'apparence de la section "liste" et de la section "image" */
+      /* Liste de produits verticale */
+      .product-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        /* Hauteur max. et défilement vertical si nécessaire */
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+      .product-list li {
+        margin: 1rem 0;
+      }
+      .product-list a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .product-list a:hover {
+        text-decoration: underline;
+      }
+      /* Vignettes en petit format */
+      .product-list img {
+        max-width: 100px; /* ajustez à volonté */
+        height: auto;
+        vertical-align: middle;
+        border-radius: 8px;
+      }
+      /* Zone d'affichage de l'image grand format */
+      .product-image {
+        display: none;      /* cachée par défaut */
+        text-align: center; /* centrer l’image */
+      }
+      .product-image img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .product-image .button {
+        margin-top: 1rem;
+      }
+
+      /* Section valeurs nutritives (inchangée, liste + image) */
       .tvn-list ul {
         list-style: none;
         padding: 0;
+        margin: 0;
       }
       .tvn-list li {
         margin: 0.5rem 0;
@@ -35,20 +78,8 @@
       }
       .tvn-image .button {
         margin-top: 1rem;
-        display: inline-block;
       }
-      /* Galerie produits (article id="produits") */
-      .product-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-      }
-      .product-gallery img {
-        width: 180px;
-        height: auto;
-        border-radius: 8px;
-      }
+
       /* Conteneur de la carte Google Maps */
       .map-container iframe {
         width: 100%;
@@ -56,6 +87,7 @@
         border: 0;
       }
     </style>
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://invasionsucree.ca/" />
@@ -71,7 +103,6 @@
     <meta name="twitter:image" content="https://invasionsucree.ca/images/preview.jpg" />
   </head>
   <body class="is-preload">
-
     <div id="bg"></div>
     <div id="wrapper">
       <!-- En-tête -->
@@ -92,26 +123,94 @@
 
       <!-- Contenu principal -->
       <div id="main">
-        <!-- Produits -->
+        <!-- PRODUITS -->
         <article id="produits">
           <h2 class="major">Produits</h2>
-          <p>Nos bonbons lyophilisés sont de véritables éclats de bonheur croustillants. On prend les classiques que vous adorez et on les propulse dans une autre galaxie grâce à la lyophilisation.</p>
-          <p><a href="#valeurs" class="button">Voir les valeurs nutritives</a></p>
-          <div class="product-gallery">
-            <img src="images/Anneaux Glow-01.jpg" alt="Anneaux Glow" />
-            <img src="images/Baies Glow-01.jpg" alt="Baies Glow" />
-            <img src="images/Baleine Glow v2-01.jpg" alt="Baleine Glow" />
-            <img src="images/Caramels GlowV2-01.jpg" alt="Caramels Glow" />
-            <img src="images/Crèmes Glacées v2 Glow-01.jpg" alt="Crèmes Glacées" />
-            <img src="images/Éponges Glow-01.jpg" alt="Éponges Glow" />
-            <img src="images/Grenouilles Glow-01.jpg" alt="Grenouilles Glow" />
-            <img src="images/Requins Glow-01.jpg" alt="Requins Glow" />
-            <img src="images/Soleils v2 Glow-01-01.jpg" alt="Soleils Glow" />
-            <img src="images/Vers Glow-01.jpg" alt="Vers Glow" />
+          <p>
+            Nos bonbons lyophilisés sont de véritables éclats de bonheur croustillants.
+            On prend les classiques que vous adorez et on les propulse dans une autre galaxie
+            grâce à la lyophilisation.
+          </p>
+          <p>
+            <a href="#valeurs" class="button">Voir les valeurs nutritives</a>
+          </p>
+
+          <!-- Liste verticale + clic pour agrandir -->
+          <div class="product-list">
+            <p>Cliquez sur un produit pour l’agrandir :</p>
+            <ul>
+              <li>
+                <a href="#" class="product-link" data-file="Anneaux Glow-01.jpg">
+                  <img src="images/Anneaux Glow-01.jpg" alt="Anneaux Glow" />
+                  &nbsp;Anneaux Glow
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Baleine Glow v2-01.jpg">
+                  <img src="images/Baleine Glow v2-01.jpg" alt="Baleine Glow" />
+                  &nbsp;Baleines Whales
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Crèmes Glacées v2 Glow-01.jpg">
+                  <img src="images/Crèmes Glacées v2 Glow-01.jpg" alt="Crèmes Glacées" />
+                  &nbsp;Crèmes Glacées
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Baies Glow-01.jpg">
+                  <img src="images/Baies Glow-01.jpg" alt="Baies Glow" />
+                  &nbsp;Baies Berries
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Caramels GlowV2-01.jpg">
+                  <img src="images/Caramels GlowV2-01.jpg" alt="Caramels Glow" />
+                  &nbsp;Caramels
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Éponges Glow-01.jpg">
+                  <img src="images/Éponges Glow-01.jpg" alt="Éponges Glow" />
+                  &nbsp;Éponges Sponges
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Grenouilles Glow-01.jpg">
+                  <img src="images/Grenouilles Glow-01.jpg" alt="Grenouilles Glow" />
+                  &nbsp;Grenouilles Frogs
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Requins Glow-01.jpg">
+                  <img src="images/Requins Glow-01.jpg" alt="Requins Glow" />
+                  &nbsp;Requins Sharks
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Soleils v2 Glow-01-01.jpg">
+                  <img src="images/Soleils v2 Glow-01-01.jpg" alt="Soleils Glow" />
+                  &nbsp;Soleils Suns
+                </a>
+              </li>
+              <li>
+                <a href="#" class="product-link" data-file="Vers Glow-01.jpg">
+                  <img src="images/Vers Glow-01.jpg" alt="Vers Glow" />
+                  &nbsp;Vers Worms
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Affichage grand format -->
+          <div class="product-image">
+            <img id="product-display" src="" alt="Bonbon agrandi" />
+            <br />
+            <a href="#" id="product-back" class="button">Retour à la liste</a>
           </div>
         </article>
 
-        <!-- Valeurs nutritives -->
+        <!-- VALEURS NUTRITIVES -->
         <article id="valeurs">
           <h2 class="major">Valeurs nutritives</h2>
           <!-- Liste cliquable (.tvn-list) -->
@@ -161,7 +260,7 @@
           </div>
         </article>
 
-        <!-- Carte -->
+        <!-- CARTE -->
         <article id="carte">
           <h2 class="major">Carte</h2>
           <div class="map-container">
@@ -173,18 +272,32 @@
           </div>
         </article>
 
-        <!-- À propos -->
+        <!-- À PROPOS -->
         <article id="apropos">
           <h2 class="major">À propos</h2>
-          <p>L’Invasion Sucrée, c’est une petite révolution dans le monde des friandises. On prend les bonbons classiques que tout le monde adore — vers, grenouilles, anneaux, caramels — et on les propulse dans une autre dimension grâce à la lyophilisation.</p>
-          <p>Résultat ? Des bonbons croquants, légers comme l’air, et intensément savoureux. Pas d’ajouts artificiels ni de transformations inutiles : seulement des textures inattendues et une explosion de goût à chaque bouchée.</p>
-          <p>Fabriqués au Québec et emballés avec soin, nos bonbons lyophilisés sont une invitation à explorer l’univers sucré sous un nouvel angle.</p>
+          <p>
+            L’Invasion Sucrée, c’est une petite révolution dans le monde des friandises.
+            On prend les bonbons classiques que tout le monde adore — vers, grenouilles, anneaux, caramels —
+            et on les propulse dans une autre dimension grâce à la lyophilisation.
+          </p>
+          <p>
+            Résultat ? Des bonbons croquants, légers comme l’air, et intensément savoureux.
+            Pas d’ajouts artificiels ni de transformations inutiles : seulement des textures
+            inattendues et une explosion de goût à chaque bouchée.
+          </p>
+          <p>
+            Fabriqués au Québec et emballés avec soin, nos bonbons lyophilisés sont
+            une invitation à explorer l’univers sucré sous un nouvel angle.
+          </p>
         </article>
 
-        <!-- Contact -->
+        <!-- CONTACT -->
         <article id="contact">
           <h2 class="major">Contact</h2>
-          <p>Tu veux rejoindre la résistance sucrée ? Pour vendre nos produits dans ton commerce, passer une commande en gros ou en savoir plus… contacte-nous!</p>
+          <p>
+            Tu veux rejoindre la résistance sucrée ? Pour vendre nos produits dans ton commerce,
+            passer une commande en gros ou en savoir plus… contacte-nous!
+          </p>
           <p>
             📦 <strong>Commandes en gros</strong> :
             <a href="https://sweetinvaders.square.site/" target="_blank">sweetinvaders.square.site</a><br />
@@ -217,7 +330,35 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script pour gérer l'affichage des fiches (valeurs nutritives) -->
+    <!-- Script : affichage grand format des produits -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const productLinks = document.querySelectorAll(".product-link");
+        const productList = document.querySelector(".product-list");
+        const productImage = document.querySelector(".product-image");
+        const productDisplay = document.getElementById("product-display");
+        const productBack = document.getElementById("product-back");
+
+        productLinks.forEach(link => {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const file = link.getAttribute("data-file");
+            productDisplay.src = "images/" + file;
+            productList.style.display = "none";
+            productImage.style.display = "block";
+          });
+        });
+
+        productBack.addEventListener("click", function(e) {
+          e.preventDefault();
+          productDisplay.src = "";
+          productImage.style.display = "none";
+          productList.style.display = "block";
+        });
+      });
+    </script>
+
+    <!-- Script : affichage des valeurs nutritives (existant) -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const links = document.querySelectorAll(".tvn-link");
@@ -244,6 +385,5 @@
         });
       });
     </script>
-
   </body>
 </html>
