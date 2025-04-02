@@ -17,20 +17,17 @@
 
       /* ----- GALERIE PRODUITS (tuiles 3 par rangée) ----- */
       .product-gallery {
-        /* Pour créer un tableau responsive à plusieurs colonnes */
         display: grid;
-        /* Ajustez minmax(180px) selon la taille souhaitée */
+        /* 180px = taille mini des vignettes. Ajuste si besoin. */
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 1rem;
-        /* Les tuiles s’empilent en vertical si l’écran est étroit */
         justify-items: center;
       }
       .product-gallery img {
-        width: 180px;         /* force la même largeur pour chaque vignette */
+        width: 180px;
         height: auto;
         border-radius: 8px;
-        cursor: pointer;      /* main au survol */
-        /* Optionnel: si vous voulez un léger effet au survol */
+        cursor: pointer;
         transition: transform 0.2s;
       }
       .product-gallery img:hover {
@@ -39,7 +36,7 @@
 
       /* ----- AFFICHAGE GRAND FORMAT ----- */
       .product-image {
-        display: none;        /* caché par défaut */
+        display: none; /* caché par défaut */
         text-align: center;
       }
       .product-image img {
@@ -134,65 +131,74 @@
 
           <!-- GALERIE (3 par rangée, vertical) -->
           <div class="product-gallery">
-            <!-- Ajustez la liste ci-dessous selon vos produits -->
+            <!-- Ajoute tes nouvelles images ici. 
+                 data-file = nom du fichier image, 
+                 src = la petite vignette à afficher 
+              -->
             <img
-              src="images/Anneaux Glow-01.jpg"
-              alt="Anneaux Glow"
-              data-file="Anneaux Glow-01.jpg"
+              src="images/Anneaux Front.png"
+              alt="Anneaux"
+              data-file="Anneaux Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Baleine Glow v2-01.jpg"
-              alt="Baleine Glow"
-              data-file="Baleine Glow v2-01.jpg"
+              src="images/Baies Front.png"
+              alt="Baies"
+              data-file="Baies Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Crèmes Glacées v2 Glow-01.jpg"
-              alt="Crèmes Glacées"
-              data-file="Crèmes Glacées v2 Glow-01.jpg"
+              src="images/Baleines Front.png"
+              alt="Baleines"
+              data-file="Baleines Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Baies Glow-01.jpg"
-              alt="Baies Glow"
-              data-file="Baies Glow-01.jpg"
+              src="images/Caramels Front.png"
+              alt="Caramels"
+              data-file="Caramels Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Caramels GlowV2-01.jpg"
-              alt="Caramels Glow"
-              data-file="Caramels GlowV2-01.jpg"
+              src="images/Crèmes glacées Front.png"
+              alt="Crèmes glacées"
+              data-file="Crèmes glacées Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Éponges Glow-01.jpg"
-              alt="Éponges Glow"
-              data-file="Éponges Glow-01.jpg"
+              src="images/Découverte Front.png"
+              alt="Découverte"
+              data-file="Découverte Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Grenouilles Glow-01.jpg"
-              alt="Grenouilles Glow"
-              data-file="Grenouilles Glow-01.jpg"
+              src="images/Éponges Front.png"
+              alt="Éponges"
+              data-file="Éponges Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Requins Glow-01.jpg"
-              alt="Requins Glow"
-              data-file="Requins Glow-01.jpg"
+              src="images/Grenouilles Front.png"
+              alt="Grenouilles"
+              data-file="Grenouilles Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Soleils v2 Glow-01-01.jpg"
-              alt="Soleils Glow"
-              data-file="Soleils v2 Glow-01-01.jpg"
+              src="images/Requins Front.png"
+              alt="Requins"
+              data-file="Requins Front.png"
               class="product-thumb"
             />
             <img
-              src="images/Vers Glow-01.jpg"
-              alt="Vers Glow"
-              data-file="Vers Glow-01.jpg"
+              src="images/Soleils Front.png"
+              alt="Soleils"
+              data-file="Soleils Front.png"
+              class="product-thumb"
+            />
+            <img
+              src="images/Vers Front.png"
+              alt="Vers"
+              data-file="Vers Front.png"
               class="product-thumb"
             />
           </div>
@@ -213,6 +219,7 @@
           <div class="tvn-list">
             <p>Cliquez sur un produit pour voir sa fiche.</p>
             <ul>
+              <li><a href="#" class="tvn-link" data-file="Whales Gummy Vidal TVN.png">Whales Gummy Vidal</a></li>
               <li><a href="#" class="tvn-link" data-file="Air Heads TVN.png">Air Heads</a></li>
               <li><a href="#" class="tvn-link" data-file="Assorted Dinosaur TVN.png">Assorted Dinosaur</a></li>
               <li><a href="#" class="tvn-link" data-file="Awesome Blossoms TVN.png">Awesome Blossoms</a></li>
@@ -244,7 +251,6 @@
               <li><a href="#" class="tvn-link" data-file="Taffy Green Apple Taffy Town TVN.png">Taffy Green Apple Taffy Town</a></li>
               <li><a href="#" class="tvn-link" data-file="Taffy Mix Taffy Town TVN.png">Taffy Mix Taffy Town</a></li>
               <li><a href="#" class="tvn-link" data-file="Taffy Neapolitan Taffy Town TVN.png">Taffy Neapolitan Taffy Town</a></li>
-              <li><a href="#" class="tvn-link" data-file="Whales Gummy Vidal TVN.png">Whales Gummy Vidal</a></li>
             </ul>
           </div>
 
@@ -339,7 +345,7 @@
           img.addEventListener("click", e => {
             e.preventDefault();
             const file = img.getAttribute("data-file");
-            productDisplay.src = "images/" + file;   // dossier "images/"
+            productDisplay.src = "images/" + file; // dossier "images/"
             gallery.style.display = "none";
             productImage.style.display = "block";
           });
